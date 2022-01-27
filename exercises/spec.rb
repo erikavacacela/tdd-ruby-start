@@ -28,7 +28,7 @@ class Person
       remove_extra_spaces("#{@first_name} #{@middle_name[0].concat('.') if @middle_name} #{@last_name}")
     end
 
-    def initialS
+    def initials
       "#{@first_name[0]}#{@middle_name[0] if @middle_name}#{@last_name[0]}"
     end
     
@@ -82,7 +82,7 @@ class Person
 
         actual_person = Person.new(:first_name => 'Augusta', :middle_name => 'Ada', :last_name => 'King')
 
-        expect(actual_person.initialS()).to eq(expected_full_name)
+        expect(actual_person.initials()).to eq(expected_full_name)
       end
 
       it "shows two characters, if middle name is missing" do
@@ -90,7 +90,7 @@ class Person
 
         actual_person = Person.new(:first_name => 'Augusta', :last_name => 'King')
 
-        expect(actual_person.initialS()).to eq(expected_full_name)
+        expect(actual_person.initials()).to eq(expected_full_name)
       end      
     end
   end
