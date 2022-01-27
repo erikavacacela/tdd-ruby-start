@@ -40,9 +40,9 @@ class Person
   RSpec.describe Person do
     describe "#full_name" do
       it "concatenates first name, middle name, and last name with spaces" do
-        expected_full_name = 'Erika Estefania Vacacela'
+        expected_full_name = 'Augusta Ada King'
 
-        actual_person = Person.new(:first_name => 'Erika', :middle_name => 'Estefania', :last_name => 'Vacacela')
+        actual_person = Person.new(:first_name => 'Augusta', :middle_name => 'Ada', :last_name => 'King')
 
         expect(actual_person.full_name()).to eq(expected_full_name)
       end
@@ -78,17 +78,17 @@ class Person
   
     describe "#initials" do
       it "concatenates the initials of first name, middle name, and last name" do
-        expected_full_name = 'EEV'
+        expected_full_name = 'AAK'
 
-        actual_person = Person.new(:first_name => 'Erika', :middle_name => 'Estefania', :last_name => 'Vacacela')
+        actual_person = Person.new(:first_name => 'Augusta', :middle_name => 'Ada', :last_name => 'King')
 
         expect(actual_person.initialS()).to eq(expected_full_name)
       end
 
       it "shows two characters, if middle name is missing" do
-        expected_full_name = 'EV'
+        expected_full_name = 'AK'
 
-        actual_person = Person.new(:first_name => 'Erika', :last_name => 'Vacacela')
+        actual_person = Person.new(:first_name => 'Augusta', :last_name => 'King')
 
         expect(actual_person.initialS()).to eq(expected_full_name)
       end      
